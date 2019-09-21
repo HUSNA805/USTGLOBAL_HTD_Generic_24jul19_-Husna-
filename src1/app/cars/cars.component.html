@@ -1,0 +1,10 @@
+<div class="col-md-5 mt-3">
+    <div class="card card-body float-left">
+        <div *ngFor ='let cars of cars'>
+            <h4>{{cars.name}}</h4>
+            <div><img src="{{cars.img}}" class="card-top-img" alt=""></div>
+            <h6 class="card-details">{{cars.description}}</h6>
+        </div>
+        <app-cars-details [carsdetails]="cars"></app-cars-details>
+    </div>
+</div>
