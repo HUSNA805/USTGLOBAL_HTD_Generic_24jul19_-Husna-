@@ -1,0 +1,16 @@
+/* tabel, th, td{
+    border: 1px solid black;
+} */
+body{
+    background: grey;
+
+}
+table{
+    margin-left: 400px;
+    height: 100px;
+    width:30%;
+
+}
+h6{
+    text-align: center;
+}
