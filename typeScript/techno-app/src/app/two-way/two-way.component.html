@@ -1,0 +1,8 @@
+<div class="col-md-4 offset-md-4 card card-body mt-5" >
+    <input type="text" [(ngModel)]="dataFormInput" class="form-control">
+</div>
+<h1 class="text-center">{{dataFormInput}}</h1>
+<!-- <img src="{{dataFormInput}}" alt=""> -->
+<!-- event binding  -->
+<h1 class="text-center" [style.background] = 'background'> Event and Property Binding</h1>
+<button class="btn btn-primary" (click) = 'colorChange(dataFormInput)' >Color Change</button>

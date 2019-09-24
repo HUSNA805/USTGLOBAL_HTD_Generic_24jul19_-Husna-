@@ -1,0 +1,14 @@
+<!-- <input type="text"#inputElement>
+<button (click)='printInput(inputElement)'>print this input</button> -->
+<div *ngIf='condition; then trueBlock else falseBlock'></div>
+<ng-template #trueBlock>Condition is true</ng-template>
+<ng-template #falseBlock>Condition is false</ng-template>
+
+<div [ngSwitch]='person'>
+    <p *ngSwitchCase='"husna"'>h code running</p>
+    <p *ngSwitchCase='"shama"'>shama code running</p>
+    <p *ngSwitchCase='"thanu"'>thanu code running</p>
+    <p *ngSwitchCase='"chandra"'>chandra code running</p>
+    <p *ngSwitchCase='"keerthi"'>kerthi code running</p>
+    <p *ngSwitchDefault>Default code;)</p>
+</div>
