@@ -1,0 +1,47 @@
+body{
+    width: 300px;
+    /* margin-top: 100px;
+    margin-left: 200px; */
+    margin: 150px 0 0 300px;
+    background-image: url(/image/FB_IMG_14981250014698011.jpg);
+    background-size: contain;
+
+}
+form{
+    background-image: url(/image/admin.gif);
+    border: 2px solid blue;
+    width: 300px;
+    text-align: center;
+    border-radius: 25px;
+    font-family:cursive;
+    font-size: 20px;
+    box-shadow: 0 0 30px  blue;
+}
+input[type="text"],input[type="password"]{
+    height: 20px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 6px;
+    margin: 7px;
+    text-align : center;
+}
+input[type="text"]:focus,input[type="password"]:focus{
+    outline:none;
+    background-color: rgb(20, 36, 255);
+}
+button{
+    border : none;
+    background-color:blueviolet;
+    margin: 0 0 10px 0;
+    width:200px;
+    height:25px;
+
+    border-radius: 50px;
+}
+button:hover{
+    background-color:brown;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 0 10px brown;
+}
