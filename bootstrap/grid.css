@@ -1,0 +1,20 @@
+.first{
+    background-color: rgb(234, 155, 241);
+    height: 300px;
+}
+.first1{
+    background-color: rgb(109, 111, 252);
+    height: 300px;
+}
+p{
+    font-family: fantasy;
+    text-align: center;
+    font-size: 20px;
+    color:blue;
+}
+img{
+    border: 2px solid black;
+}
+body{
+    background-color: rgb(194, 119, 194);
+}
