@@ -1,0 +1,24 @@
+.img-div {
+    border: 1px solid black;
+    border-radius: 50px;
+    float: left;
+    overflow: hidden;
+    margin-left: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+img {
+    width: 250px;
+    height: 350px;
+    transition: all 2s;
+}
+
+img:hover {
+    transform: scale(1.2,1.2)
+}
+
+.desc {
+    color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
