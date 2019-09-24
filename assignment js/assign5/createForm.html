@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <legend>
+        <fieldset>
+            <form  action="" method="GET">
+            <div>
+                <label>userName</label>
+            </div>
+            <div>   
+                <input id="uName" onkeyup="validateForm()" name="uName" type="text" required>
+            </div>
+            <div>
+                <label>password</label>
+            </div>
+            <div>
+                <input onkeyup="validateForm()" name="passwrd" id="passwrd" type="password" required>
+                <span><button type="button" onkeypress="showPasswrd()">showpasswrd</button></span>
+            </div>
+            <br>
+            <div>
+                <input type="submit" name="loginSubmit" onclick="addData()" value="login">
+            </div>
+            </form>
+        </fieldset>
+    </legend>
+
+   <div id="create">
+       <table id='tab' class="table table-bordered" cellspacing = '0px' cellpadding = '20px' text-aling = 'center'>
+           <thead>
+               <tr>
+                   <th>UserName</th>
+                   <th>Password</th>
+               </tr>
+           </thead>
+           <tbody>
+
+           </tbody>
+
+       </table>
+   </div>
+
+    <script src="/assign5/createForm.js"></script>
+</body>
+</html>
