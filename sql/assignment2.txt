@@ -1,0 +1,29 @@
+1  waq to display all the details of software developer in dept 30
+mysql> select *from employee_info  where designation='software developer' and deptid=30;
+
+2 waq to display the list all software developer in dept no 40 and having salary greater than 5000//doubt
+mysql> select *from employee_info  where designation='software developer' and deptid=30 and salary>5000;
+
+3 waq to display list all the employees except who are working in dept 10 and 20
+mysql> select *from employee_info  where deptid not in(10,20);
+
+4 waq to display list all the employees who are not working as software developer and clerk in dept no 10 20 with salary in range og 1000 to 3000//check
+mysql> select *from employee_info  where designation not in('software developer','clerk')and deptid in(10,20) and salary between 1000 and 3000;
+
+5 waq to display list of employees whose salary is not in range of 10000 to 2000 in dept 10,20,30 except all salesman
+mysql> select *from employee_info  where designation not in('salesman')and deptid in(10,20,30) and salary not between 10000 and 20000;
+
+6 waq to arrange all the employees by salary in descending order
+mysql> select *from employee_info order by salary desc;
+
+7 waq to display the maximum salary,minimum salary and total salary from employee
+mysql> select max(salary) maximum_sal,min(salary) minimum_sal,sum(salary) total_sal from employee_info;
+
+8 waq to display the list of no of software developer in department no 20
+mysql> select *from employee_info where designation='software developer' and deptid='20';
+
+9 waq to display the highest and lowest salary earned by salesman
+mysql> select max(salary) maximum_sal,min(salary) minimum_sal from employee_info where designation='salesman';
+
+10 waq to display the total salary of all departments
+mysql> select sum(salary) total_sal from employee_info;

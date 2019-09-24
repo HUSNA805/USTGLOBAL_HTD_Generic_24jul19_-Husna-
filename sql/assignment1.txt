@@ -1,0 +1,82 @@
+1 waq to display employees from dept no-> 20
+mysql> select *from employee_info  where deptid=20;
++----+------+----------------+-----------------+----------+------+------------+------------+--------+--------+------------+
+| id | name | emailid        | designation     | mobileNo | age  | Dob        | doj        | salary | deptid | bloodgroup |
++----+------+----------------+-----------------+----------+------+------------+------------+--------+--------+------------+
+|  2 | ajay | ajay@gmail.com | software tester | 99956347 |   21 | 1997-10-16 | 2019-09-11 |  35000 |     20 | Ab+        |
++----+------+----------------+-----------------+----------+------+------------+------------+--------+--------+------------+
+
+2 waq to display employees earning more than 2500
+ mysql> select *from employee_info  where salary>2500;
+
+3 waq to display all employees whose job type is software developer
+mysql> select *from employee_info  where designation='software developer';
++----+----------+--------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+| id | name     | emailid            | designation        | mobileNo | age  | Dob        | doj        | salary | deptid | bloodgroup |
++----+----------+--------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+|  1 | keerthi  | keer@gmail.com     | software developer | 80956347 |   21 | 1997-12-16 | 2019-09-21 |  30000 |     10 | A+         |
+|  7 | kanishka | kanishka@gmail.com | software developer | 90856347 |   26 | 1992-10-16 | 2019-05-21 |  60000 |     70 | A+         |
+|  8 | husna    | husna@gmail.com    | software developer | 80989047 |   21 | 1997-10-10 | 2019-10-21 |  30000 |     80 | A+         |
++----+----------+--------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+
+4 waq to display the employees working in dept 10 20 & 40//doubt
+mysql> select *from employee_info  where deptid in(10,20,40);
++----+---------+-------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobileNo | age  | Dob        | doj        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+|  1 | keerthi | keer@gmail.com    | software developer | 80956347 |   21 | 1997-12-16 | 2019-09-21 |  30000 |     10 | A+         |
+|  2 | ajay    | ajay@gmail.com    | software tester    | 99956347 |   21 | 1997-10-16 | 2019-09-11 |  35000 |     20 | Ab+        |
+|  4 | kishore | kishore@gmail.com | HR                 | 90909032 |   27 | 1992-01-10 | 2015-09-05 |  35000 |     40 | AB+        |
++----+---------+-------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+
+5 waq to display all the employees whose name starts with s
+mysql> select *from employee_info  where name like 's%';
++----+--------+------------------+-------------+----------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation | mobileNo | age  | Dob        | doj        | salary | deptid | bloodgroup |
++----+--------+------------------+-------------+----------+------+------------+------------+--------+--------+------------+
+|  9 | suresh | suresh@gmail.com | clerk       | 90998989 |   32 | 1989-11-18 | 2003-02-01 |   5000 |     90 | o-         |
+| 13 | sandy  | sandy@gmail.com  | salesman    | 90998343 |   26 | 1992-01-08 | 2014-01-21 |   3000 |    130 | AB-        |
+| 20 | sas    | NULL             | NULL        |     NULL | NULL | 1994-12-01 | NULL       |   NULL |   NULL | NULL       |
++----+--------+------------------+-------------+----------+------+------------+------------+--------+--------+------------+
+
+6 waq to display the employees whose first name is having letter 'l' as 2nd character//doubt
+mysql> select *from employee_info  where name like '_l%';
+
+7 waq to display the employees whose firstname having atleast 2 'a' character
+
+mysql> select *from employee_info  where name like '%a%a%';
++----+----------+--------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+| id | name     | emailid            | designation        | mobileNo | age  | Dob        | doj        | salary | deptid | bloodgroup |
++----+----------+--------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+|  2 | ajay     | ajay@gmail.com     | software tester    | 99956347 |   21 | 1997-10-16 | 2019-09-11 |  35000 |     20 | Ab+        |
+|  7 | kanishka | kanishka@gmail.com | software developer | 90856347 |   26 | 1992-10-16 | 2019-05-21 |  60000 |     70 | A+         |
+| 15 | kanya    | kanya@gmail.com    | HR                 | 90909132 |   27 | 1993-05-10 | 2017-09-05 |  35000 |    150 | o+         |
++----+----------+--------------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+
+8 waq to display all the employees whose lastname is having 'e' as last second character
+mysql> select *from employee_info  where name like '%e_';
+
+9 waq to display all the employees who are having exactly 5 characters i their lastname//doubt
+
+mysql> select *from employee_info  where name like '_____';
++----+-------+-----------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobileNo | age  | Dob        | doj        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+|  8 | husna | husna@gmail.com | software developer | 80989047 |   21 | 1997-10-10 | 2019-10-21 |  30000 |     80 | A+         |
+| 12 | kavin | kavin@gmail.com | salesman           | 79898343 |   26 | 1992-04-09 | 2015-04-21 |   3000 |    120 | B-         |
+| 13 | sandy | sandy@gmail.com | salesman           | 90998343 |   26 | 1992-01-08 | 2014-01-21 |   3000 |    130 | AB-        |
+| 15 | kanya | kanya@gmail.com | HR                 | 90909132 |   27 | 1993-05-10 | 2017-09-05 |  35000 |    150 | o+         |
+| 16 | priya | NULL            | NULL               |     NULL | NULL | 1993-01-01 | NULL       |  23000 |    180 | NULL       |
++----+-------+-----------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+
+10 waq to display the employees whose salary is between 20000 and 30000
+mysql> select *from employee_info where salary between 20000 and 30000;
++----+---------+-----------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid         | designation        | mobileNo | age  | Dob        | doj        | salary | deptid | bloodgroup |
++----+---------+-----------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+|  1 | keerthi | keer@gmail.com  | software developer | 80956347 |   21 | 1997-12-16 | 2019-09-21 |  30000 |     10 | A+         |
+|  8 | husna   | husna@gmail.com | software developer | 80989047 |   21 | 1997-10-10 | 2019-10-21 |  30000 |     80 | A+         |
+| 16 | priya   | NULL            | NULL               |     NULL | NULL | 1993-01-01 | NULL       |  23000 |    180 | NULL       |
++----+---------+-----------------+--------------------+----------+------+------------+------------+--------+--------+------------+
+
+

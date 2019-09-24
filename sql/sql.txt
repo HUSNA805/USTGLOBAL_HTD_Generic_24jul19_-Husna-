@@ -1,0 +1,217 @@
+/TO SHOW DATABASES PRESENT SQL/
+
+ 1 mysql> show database
+    -> show dtabases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database
+show dtabases' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| ustglobal          |
++--------------------+
+5 rows in set (0.00 sec)
+
+/ TO CREATE NEW DATABASE/
+ 2 mysql> create database ustglobal;
+Query OK, 1 row affected (0.09 sec)
+
+/TO USE CREATED DATABASE/
+ 3 mysql> use ustglobal
+Database changed
+
+/TO VIEW TABLES PRESENT IN SQL/
+ 4 mysql> show tables;
+Empty set (0.00 sec)
+
+/TO CREATE A NEW TABLE /
+5  mysql> create table student(id int,name varchar(120),emailId varchar(150));
+Query OK, 0 rows affected (0.64 sec)
+
+/TO SHOW THE DETAILS AND DESCRIPTION OF TABLE CREATED (DESCRIBE->DESC)/
+6 mysql> desc student;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | YES  |     | NULL    |       |
+| name    | varchar(120) | YES  |     | NULL    |       |
+| emailId | varchar(150) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+/TO DROP TABLE/
+
+ 7 mysql> drop table student;
+Query OK, 0 rows affected (0.38 sec)
+
+/TO DROP DATABASES/
+
+ 8 mysql> drop database ustglobal;
+Query OK, 0 rows affected (0.14 sec)
+
+/TO ADD NEW COLUMN TO EXISTING TABLE/
+ 9 mysql> alter table empdetails add emailID varchar(100);
+Query OK, 0 rows affected (0.86 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+/TO DROP COLUMN/
+ 10 mysql> alter table empdetails drop address;
+Query OK, 0 rows affected (0.58 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+/TO RENAME /
+11 mysql> alter table empdetails change dept designation varchar(100);
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+/TO INSERT DATA/
+
+ 12 mysql> insert into empinfo(empID,name)values(004,'husna');
+Query OK, 1 row affected (0.06 sec)
+
+/TO SELECT ENTIRE RECORD/
+
+ 13 mysql> select *from empinfo;
+
+/To UPDATE VALUES/
+14 mysql> update empinfo set emailID='aaa@123';
+Query OK, 4 rows affected (0.13 sec)
+
+/TO DELETE RECORDS/
+15 mysql> delete from empinfo;
+Query OK, 4 rows affected (0.09 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+/TO PROJECT /
+16 mysql> select empID,name from empinfo;
+
+/USE OF WHERE CLAUSE/
+17 mysql> select empID,name from empinfo where empID=5;
+
+/ T0 DELETE USING WHERE CLAUSE/
+20d delete name from empinfo where empid=2;
+ 
+arthimetic operators
+/sal greater than or equal to 5000/
+select name,age,designation from employee_info where salary>=5000
+
+/sal lesser than 5000/
+select name,age,designation from employee_info where salary<5000
+
+/sal greater than 5000/
+select name,age,designation from employee_info where salary>5000
+
+/to calculate annual sal/
+select name,age,designation ,sal,sal*12 annualsal from employee_info
+
+/to calculate one day sal/
+/sal greater than by 5000/
+select name,age,designation,sal,sal/30 onedaysal from employee_info
+
+/alaising all records in table/
+select id eid,name ename,designation design,mobileno phoneno,dob edob,doj joiningdate,age emp_age,bloodgroup bg from employee_info;
+
+/to distinct keyword for sal column/
+select distinct sal from employee_info
+/to distinct keyword for id and designation /
+select distinct designation,job from employee_info
+
+/and operator
+mysql> select *from employee_info where deptid=20&&salary>10000;
+/aquery to select all records where desgination is salesman and dob=1994
+mysql> select *from employee_info where designation='hr'&&dob='1993-05-10';
+
+/query to display sal=10000 and designation=analyst
+mysql> select *from employee_info where designation='analyst'&& salary=10000;
+
+/to display all records whose deptid is 20 or 60;
+mysql> select *from employee_info where deptid=20||deptid=60;
+
+/to display name salary emailid whose designation is software tester and age is greater than 20
+mysql> select name,salary,emailid from employee_info where  designation='software tester' or age>=20;
+
+/to display name whose designation is hr and deptno is 40 or designation is clerk and salary is greater than 1000/
+mysql> select name from employee_info where designation='hr'&&deptid=40 or designation='clerk'&&salary>10000;
+
+/to display records whose sal=40000 and designation is software developer/
+mysql> select *from employee_info where salary=10000&&designation='software developer';
+
+/to display all records except whose designation is software developer
+mysql> select *from employee_info where designation!='software developer';
+
+
+/to display all records excluding deptno 20 or 30;
+mysql> select *from employee_info where  not deptid=20 or deptid=30;
+
+/display all records who is working as salesman belongs to deptno 20 or 30/
+mysql> select *from employee_info where designation='salesman'&&deptid=40||deptid=30;
+/to display all records whose deptid is 20 and salary is greater than 10000 and less than 25000 including 10000 and 25000
+mysql> select *from employee_info where deptid=20&&(salary>=10000&&salary<=25000);
+
+/to display employees whose deptid=20 or 10 or 30;
+mysql> select *from employee_info where deptid=20||deptid=30||deptid=10;
+
+/
+/to display employees whose deptid=20 or 10 or 30;
+mysql> select *from employee_info where deptid  in(10,20,30);
+
+/to display employees whose deptid=20,40,30 ,60,70 and designation is clerk
+mysql> select *from employee_info where deptid  in(20,30,40,60,70)&& designation='clerk';
+
+
+/to display employees excluding whose deptid=20,40,30 ,60,70 and designation is clerk
+mysql> select *from employee_info where deptid  not in(20,30,40,60,70)&& designation='clerk'
+
+/ to display employees who joined on 2017
+mysql> select *from employee_info  where doj between '2017-01-01'and '2017-12-31';
+
+/to display employees who not joined on 2017
+mysql> select *from employee_info  where doj not between '2017-01-01'and '2017-12-31';
+
+/to display name ,annual sal from employee_info where designation is null
+mysql> select name,salary*12 from employee_info where designation is null;
+
+
+/to display name ,annual sal from employee_info where designation is not null
+mysql> select name,salary*12 from employee_info where designation is not null;
+
+/to display all employees whose name starts with s
+mysql> select *from employee_info  where name like 's%';
+
+/to display all details of employee whose name contains only 5chars
+mysql> select *from employee_info  where name like '_____';
+
+
+/to display all details of employee whose name second char is r
+
+mysql> select *from employee_info  where name like '_r%';
+
+/to display all employee whose name starts and ends with s
+mysql> select *from employee_info  where name like 's%s';
+
+/to display all infomation of employee where designation have atleast to e's
+mysql> select *from employee_info  where designation like '%e%e%';
+
+/to display all employees whose name starts with k or s
+mysql> select *from employee_info  where name like 'k%' or 's%';
+
+/to display all the record of employee whose third letter is c and sixth letter is i
+mysql> select *from employee_info  where name like '__c__i%'
+
+/to display all employees excluding whose name starts with a
+mysql> select *from employee_info  where name not like 'k%';
+
+/to display average salary of all the employees
+mysql> select avg(salary) from employee_info;
+
+/to display maximum,minimum,average,count and sum of salary of employee_info
+mysql> select avg(salary) average_salary  from employee_info;
+mysql> select max(salary) maximum_salary  from employee_info;
+mysql> select min(salary) minimum_salary  from employee_info;
+mysql> select sum(salary) total_salary  from employee_info;
+mysql> select count(salary) count_salary  from employee_info;
+
