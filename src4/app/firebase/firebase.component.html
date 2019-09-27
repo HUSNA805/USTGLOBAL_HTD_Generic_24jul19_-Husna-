@@ -1,0 +1,36 @@
+<!-- <p>firebase works!</p> -->
+<!-- //we will create a form -->
+<div class="col-md-4 offset-md-4 mt-4">
+<h3 class="text-center">
+    Add user
+</h3>
+
+
+<form #userForm='ngForm' (ngSubmit)='postUser(userForm)'>
+    <legend>Form </legend>
+    <div class="form-group">
+        <input type="hidden" name="id"  class="form-control mb-3 mt-3" 
+        #id='ngModel' [(ngModel)]='firebaseService.selectedUser.id'> 
+        <!-- //this field is hidden but present -->
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" name ="name" class="form-control mb-3 mt-3" 
+      #name='ngModel' ngModel placeholder="Brand" [(ngModel)]='firebaseService.selectedUser.Brand'>
+    </div>
+    <div class="form-group">
+        <input type="email" class="form-control" name="email" id="" class="form-control mb-3 mt-3" 
+        #email='ngModel' ngModel placeholder="Model" required email [(ngModel)]='firebaseService.selectedUser.Model'>
+    </div>
+        <div class="form-group">
+                <input type="tel" class="form-control" name="phno" id="" class="form-control mb-3 mt-3" 
+                #phno='ngModel' ngModel placeholder="YOR" [(ngModel)]='firebaseService.selectedUser.YOR'>
+            </div>
+     <div class="form-group">
+                <input type="tel" class="form-control" name="phno" id="" class="form-control mb-3 mt-3" 
+                #phno='ngModel' ngModel placeholder="Cost" [(ngModel)]='firebaseService.selectedUser.Cost'>
+     </div>
+    
+
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+</div>
