@@ -1,0 +1,28 @@
+ 
+<table class=" table table-bordered col-md-6 offset-md-3 mt-4"  >
+    <thead col-md-3 offset-md-1>
+        <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>User Id </th>
+        <th>Body</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+   <tr *ngFor="let typi of typicode">   
+
+        <!-- <img src="{{typi.url}}" style="height:100px; width:200px " class="mt-3"> -->
+     <td> {{typi.id}}</td>
+     <td>{{typi.title}} </td>
+     <td>{{typi.userId }}</td>
+   
+     <td>{{typi.body}}</td>
+      
+      
+      </tr>
+      </tbody>
+      </table>
+  
+
